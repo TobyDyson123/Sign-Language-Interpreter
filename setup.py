@@ -5,7 +5,6 @@
 #####################################################################
 
 import os
-import numpy as np
 from globals import *
 
 new_action_folder_count = 0 # Initialize counter for new action folders
