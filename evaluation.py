@@ -32,7 +32,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.05)
 #
 #####################################################################
 
-from sklearn.metrics import multilabel_confusion_matrix, accuracy_score
+from sklearn.metrics import multilabel_confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
 from tensorflow.keras.models import load_model
 
 model = load_model('action.h5')
@@ -42,8 +42,18 @@ yhat = model.predict(X_test)
 ytrue = np.argmax(y_test, axis=1).tolist()
 yhat = np.argmax(yhat, axis=1).tolist()
 
+# Confusion Matrix
 cfmatrix = multilabel_confusion_matrix(ytrue, yhat)
 print (cfmatrix)
 
+# Accuracy
 accuracy = accuracy_score(ytrue, yhat)
-print (accuracy)
+print(f"Accuracy: {accuracy:.2f}")
+
+# Precision, Recall, and F1 Score
+precision = precision_score(ytrue, yhat, average='weighted')
+recall = recall_score(ytrue, yhat, average='weighted')
+f1 = f1_score(ytrue, yhat, average='weighted')
+print(f"Precision: {precision:.2f}")
+print(f"Recall: {recall:.2f}")
+print(f"F1 Score: {f1:.2f}")
