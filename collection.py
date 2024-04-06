@@ -5,7 +5,6 @@
 #####################################################################
 
 import cv2
-import mediapipe
 from globals import *
 
 cap = cv2.VideoCapture(0)
@@ -26,10 +25,6 @@ with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=
 
             # Loop through video length aka sequence length
             for frame_num in range(sequence_length):
-
-                # Check if already collected points
-                #if os.listdir(sequence_path):
-                #    break
 
                 # Read feed
                 ret, frame = cap.read()
