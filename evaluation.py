@@ -9,7 +9,6 @@ from tensorflow.keras.utils import to_categorical
 from globals import *
 
 label_map = {label:num for num, label in enumerate(actions)}
-# Example output: {'hello': 0, 'thanks': 1, 'iloveyou': 2}
 
 sequences, labels = [], []
 for action in actions:

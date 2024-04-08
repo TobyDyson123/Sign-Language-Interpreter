@@ -14,9 +14,6 @@ DATA_PATH = os.path.join('MP_Data')
 
 # Actions to try detect
 actions = np.array(['hello', 'thankyou', 'iloveyou', 'name', 'me', 'sorry', 'howareyou'])
-# hello, thankyou, iloveyou, sorry - https://www.youtube.com/watch?v=Iz3h3B5jBz8 
-# name, me - https://www.youtube.com/watch?v=04tOoXCqyEM
-# howareyou - https://www.youtube.com/watch?v=n09Rb3OTKfw
 
 # 30 videos worth of data
 no_sequences = 30
